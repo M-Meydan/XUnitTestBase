@@ -1,6 +1,6 @@
 ![NuGet](https://img.shields.io/nuget/v/XUnitTestBase.svg)
-![License](https://img.shields.io/github/license/YourOrg/XUnitTestBase)
-![Build](https://img.shields.io/github/actions/workflow/status/YourOrg/XUnitTestBase/build.yml?branch=main)
+![License](https://img.shields.io/github/license/muhsinmeydan/XUnitTestBase.svg)
+![Build](https://img.shields.io/github/actions/workflow/status/muhsinmeydan/XUnitTestBase/build.yml?branch=main)
 
 # XUnitTestBase
 
@@ -8,23 +8,23 @@
 
 ---
 
-## 📑 Table of Contents
+## 📁 Table of Contents
 
-- [Version](#version)
-- [Purpose](#purpose)
-- [Key Features](#key-features)
-- [Integration Testing](#integration-testing)
-- [Unit Testing](#unit-testing)
-- [Examples](#examples)
-- [Author](#author)
-- [License](#license)
+- [Version](#-version)
+- [Purpose](#-purpose)
+- [Key Features](#-key-features)
+- [Integration Testing](#-integration-testing)
+- [Unit Testing](#-unit-testing)
+- [Example Highlights](#-example-highlights)
+- [Author](#-author)
+- [License](#-license)
 
 ---
 
-## 🆚 Version
+## 🔚 Version
 
-**Latest:** `v1.0`  
-**Status:** Actively Maintained ✅
+**Latest:** `v1.0`\
+**Status:** Actively maintained ✅
 
 ---
 
@@ -32,22 +32,22 @@
 
 **XUnitTestBase** provides a standardized and developer-friendly test foundation for .NET applications using:
 
-- 🧪 `xUnit`
+- 💢 `xUnit`
 - 🤖 `Moq` with `AutoMocker`
 - 🧱 `WebApplicationFactory<T>` for integration testing
 
-It helps teams write cleaner, faster, and more maintainable unit and integration tests with minimal setup.
+It enables teams to write cleaner, faster, and more maintainable unit and integration tests with minimal setup.
 
 ---
 
 ## ✨ Key Features
 
 - ✅ `TestSubject<T>`: auto-mocked unit test base class using `Moq.AutoMocker`
-- ✅ `MockOf<T>()`: get & verify dependency mocks
+- ✅ `MockOf<T>()`: access and verify dependency mocks
 - ✅ `With<T>()`: override mocks or inject custom test doubles
-- ✅ `IntegrationTestBase<T>`: lightweight base for API integration tests
-- ✅ Support for `WebApplicationFactory`, `InMemory EF Core`, and `Fake Auth`
-- ✅ Built-in `FakeBuilder` using `AutoBogus` for test data
+- ✅ `IntegrationTestBase<T>`: lightweight base class for API integration tests
+- ✅ Supports `WebApplicationFactory`, `InMemory EF Core`, and `Fake Auth`
+- ✅ Compatible with `AutoBogus` for test data generation
 
 ---
 
@@ -77,7 +77,7 @@ public class UserApiTests : IntegrationTestBase<Program>
 
 ## 🧪 Unit Testing
 
-Extend `TestSubject<T>` for clean unit tests:
+Extend `TestSubject<T>` for clean and isolated unit tests:
 
 ```csharp
 public class UserServiceTests : TestSubject<UserService>
@@ -103,20 +103,20 @@ public class UserServiceTests : TestSubject<UserService>
 
 ## 💡 Example Highlights
 
-- 🧪 Auto-mocking multiple dependencies
-- 🔁 Overriding mocks with real/fake implementations
-- 📦 Fake data generation with `AutoBogus`
+- 💢 Auto-mocking for multiple dependencies
+- 🔁 Override mocks with real or custom fakes
+- 📆 Test data generation using `AutoBogus`
 - 🚀 End-to-end HTTP testing with in-memory `HttpClient`
 
 ---
 
 ## 👤 Author
 
-Built for practical, scalable test development. Contributions and suggestions welcome.  
+Built for practical, scalable test development. Contributions and suggestions are welcome.\
 Created by **Muhsin Meydan**
 
 ---
 
 ## 🛠 License
-
-MIT License — free for commercial and open-source use.
+MIT License — free for commercial and open-source u
+se.
