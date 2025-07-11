@@ -19,21 +19,21 @@ jobs:
         dotnet-version: '8.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore src/FxResult.sln
+      run: dotnet restore src/XUnitTestBase/XUnitTestBase.csproj
 
     - name: Build project
-      run: dotnet build src/FxResult.sln --configuration Release --no-restore
+      run: dotnet build src/XUnitTestBase/XUnitTestBase.csproj --configuration Release --no-restore
 
     - name: Run tests
-      run: dotnet test src/FxResult.sln --configuration Release --no-build --verbosity normal
+      run: dotnet test src/XUnitTestBase/XUnitTestBase.csproj --configuration Release --no-build --verbosity normal
 
     - name: Pack NuGet package
-      run: dotnet pack src/FxResult/FxResult.csproj --configuration Release --no-build --output ./artifacts
+      run: dotnet pack src/XUnitTestBase/XUnitTestBase.csproj --configuration Release --no-build --output ./artifacts
 
     - name: Upload package as artifact
       uses: actions/upload-artifact@v4
       with:
-        name: FxResultNuGet
+        name: XUnitTestBaseNuGet
         path: ./artifacts/*.nupkg
 
     - name: Publish to NuGet (only on tag)
