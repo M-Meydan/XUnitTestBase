@@ -1,5 +1,10 @@
 # XUnitTestBase
 
+[![NuGet](https://img.shields.io/nuget/v/XUnitTestBase.svg)](https://www.nuget.org/packages/XUnitTestBase/)
+[![License](https://img.shields.io/github/license/M-Meydan/XUnitTestBase)](https://github.com/M-Meydan/XUnitTestBase/blob/main/LICENSE)
+[![Build](https://img.shields.io/github/actions/workflow/status/M-Meydan/XUnitTestBase/build.yml?branch=main)](https://github.com/M-Meydan/XUnitTestBase/actions/workflows/build.yml)
+
+
 **XUnitTestBase v1.0** — A clean, extensible test foundation for .NET with auto-mocking, integration testing, and developer-friendly conventions.
 
 ---
@@ -23,7 +28,6 @@ It helps teams write cleaner, faster, and more maintainable unit and integration
 - ✅ With<T>(): override mocks or inject custom test doubles
 - ✅ IntegrationTestBase<T>: lightweight base for API integration tests
 - ✅ Support for WebApplicationFactory, InMemory EF Core, and Fake Auth
-- ✅ Built-in FakeBuilder using AutoBogus for test data
 
 ---
 
@@ -83,7 +87,6 @@ public class UserServiceTests : TestSubject<UserService>
 
 - 🧪 Auto-mocking multiple dependencies
 - 🔁 Overriding mocks with real/fake implementations
-- 📦 Fake data generation with AutoBogus
 - 🚀 End-to-end HTTP testing with in-memory HttpClient
 
 ---
