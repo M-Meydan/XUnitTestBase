@@ -1,6 +1,7 @@
-using System;
+using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using Moq.AutoMock;
+using System;
 
 namespace XUnitTestBase; 
 
@@ -25,7 +26,7 @@ namespace XUnitTestBase;
 /// </example>
 /// </summary>
 /// <typeparam name="T">The system under test (SUT).</typeparam>
-public abstract class TestSubject<T> : IDisposable where T : class
+public abstract partial class TestSubject<T> : IDisposable where T : class
 {
     private readonly AutoMocker _mocker = new();
     private T? _subject;
