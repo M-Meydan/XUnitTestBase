@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace XUnitTestBase;
@@ -84,11 +85,32 @@ public class CustomWebApplicationFactory<TEntryPoint> : WebApplicationFactory<TE
     /// </summary>
     protected virtual Action<IServiceCollection>? OverrideServices() => null;
 
+
     /// <summary>
-    /// Configures the web host and applies any service overrides provided.
+    /// Override to customize IConfiguration loading (optional).
     /// </summary>
+    protected virtual void ConfigureAppConfiguration(IWebHostBuilder builder)
+    {
+        builder.ConfigureAppConfiguration((context, configBuilder) =>
+        {
+            var projectDir = Directory.GetCurrentDirectory();
+
+            configBuilder
+                .SetBasePath(projectDir)
+                .AddJsonFile("appsettings.json", optional: true)
+                .AddJsonFile("appsettings.Development.json", optional: true)
+                .AddEnvironmentVariables();
+        });
+
+        builder.UseEnvironment("IntegrationTest");
+    }
+
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
+        // Inject appsettings/Test config
+        ConfigureAppConfiguration(builder);
+
+        // Inject DI overrides
         builder.ConfigureServices(services =>
         {
             OverrideServices()?.Invoke(services);
